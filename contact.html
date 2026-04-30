@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Kyla Chang Barre & Fitness</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero { background: var(--navy-mid); }
+  #contact-section { background: var(--navy); padding: 5rem 3rem 7rem; }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* FORM */
+  .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--navy-mid); border: 1px solid var(--border);
+    border-radius: 2px; color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    padding: 0.8rem 1rem; transition: border-color 0.2s; outline: none;
+    -webkit-appearance: none;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(148,163,184,0.5); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--red); }
+  .form-group select option { background: var(--navy-mid); color: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+
+  .form-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.6; }
+
+  .form-success {
+    display: none;
+    background: rgba(200,16,46,0.1); border: 1px solid var(--border-red);
+    border-radius: 4px; padding: 1.5rem; text-align: center;
+    margin-top: 1rem;
+  }
+  .form-success h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .form-success p { font-size: 0.85rem; color: var(--muted); }
+
+  /* CONTACT INFO CARDS */
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .contact-card {
+    background: var(--navy-mid); border: 1px solid var(--border);
+    border-radius: 4px; padding: 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+    position: relative; overflow: hidden;
+  }
+  .contact-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--red); }
+  .contact-card-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: rgba(200,16,46,0.12); border: 1px solid var(--border-red);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  }
+  .contact-card-icon svg { width: 18px; height: 18px; fill: var(--red); }
+  .contact-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.04em; margin-bottom: 0.25rem; }
+  .contact-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+  .contact-card a { color: var(--white); font-size: 0.9rem; font-weight: 500; text-decoration: none; }
+  .contact-card a:hover { color: var(--red); }
+
+  /* IMPORTANT NOTE BOX */
+  .note-box {
+    background: rgba(200,16,46,0.08); border: 1px solid var(--border-red);
+    border-radius: 4px; padding: 1.25rem 1.5rem; margin-top: 0.5rem;
+  }
+  .note-box strong { font-size: 0.82rem; color: var(--red); display: block; margin-bottom: 0.35rem; letter-spacing: 0.05em; }
+  .note-box p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  @media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    #contact-section { padding: 3rem 1.5rem 5rem; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+<main>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <div class="page-hero-eyebrow">Get in Touch</div>
+      <h1>CONTACT<br><em>KYLA</em></h1>
+      <p>Questions about classes, competition prep, or scheduling? Send a message and Kyla will get back to you promptly.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact-section">
+    <div class="contact-layout">
+
+      <!-- FORM -->
+      <div>
+        <div class="section-label">Send a Message</div>
+        <h2>Let's Talk</h2>
+        <p class="section-sub" style="margin-bottom:2rem;">Fill out the form below for questions about classes, competition training, or anything else. For the fastest response, book directly through the <a href="booking.html" style="color:var(--red);text-decoration:none;">booking page</a>.</p>
+
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="jane@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number (optional)</label>
+            <input type="tel" name="phone" placeholder="(404) 555-0123">
+          </div>
+
+          <div class="form-group">
+            <label>I'm inquiring about…</label>
+            <select name="inquiry_type" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option>Competition Solo Lessons (Ages 6–18)</option>
+              <option>Private Choreography</option>
+              <option>Group Classes – Youth / Competition</option>
+              <option>Adult Sunday Classes (18+)</option>
+              <option>Private Barre Session</option>
+              <option>Semi-Private Session</option>
+              <option>General Question</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Dancer's Age (if applicable)</label>
+            <input type="text" name="dancer_age" placeholder="e.g. 10 years old">
+          </div>
+
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea name="message" placeholder="Tell Kyla what you're looking for, any questions you have, or your dancer's current level and upcoming competitions…" required></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Message</button>
+            <p class="form-note">Kyla typically responds within 24 hours. For immediate booking, use the <a href="booking.html" style="color:var(--red);">booking page</a> — it syncs directly to her iPhone.</p>
+          </div>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <h3>Message Sent!</h3>
+          <p>Thanks for reaching out. Kyla will get back to you within 24 hours.<br>In the meantime, you can <a href="booking.html" style="color:var(--red);">book your class here</a>.</p>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+
+        <div>
+          <div class="section-label" style="margin-bottom:1rem;">Studio Information</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <h3>Studio Location</h3>
+            <p>Classes are held at <strong style="color:var(--white);">Lisa's Dance Spot</strong><br>
+            Contact Kyla for the exact studio address after booking.</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          </div>
+          <div>
+            <h3>Book Online</h3>
+            <p>The fastest way to reserve your spot. Instant confirmation synced to Kyla's iPhone.</p>
+            <a href="booking.html" style="margin-top:0.5rem;display:inline-block;color:var(--red);font-size:0.85rem;">→ Go to Booking Page</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <h3>Adult Sunday Classes</h3>
+            <p>All adult 18+ classes are Sunday mornings only — 9 AM, 10 AM, and 11 AM. Book your spot online in advance.</p>
+            <a href="booking.html" style="margin-top:0.5rem;display:inline-block;color:var(--red);font-size:0.85rem;">→ Book a Sunday Class</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          </div>
+          <div>
+            <h3>Competition Season Priority</h3>
+            <p>Solo lesson and choreography slots fill up fast during competition season (Oct–April). Book early to secure your preferred time with Kyla.</p>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <strong>⚡ For Fastest Response — Book Directly</strong>
+          <p>Booking through the online scheduler sends an instant notification to Kyla's iPhone. Contact form responses are typically within 24 hours during business days.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+<div id="site-footer"></div>
+<script src="css/nav.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  form.style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  // In production, replace this with a real form submission (Formspree, EmailJS, etc.)
+}
+</script>
+</body>
+</html>

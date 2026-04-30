@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private & Solo Lessons – Kyla Chang Barre & Fitness</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero { background: var(--navy-mid); }
+  #lessons  { background: var(--navy); }
+  #process  { background: var(--navy-mid); }
+  #faq      { background: var(--navy); }
+
+  /* PRIVATES GRID */
+  .privates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+
+  /* PROCESS STEPS */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; counter-reset: step; }
+  .step { padding: 2rem 1.5rem; border: 1px solid var(--border); position: relative; counter-increment: step; }
+  .step + .step { border-left: none; }
+  .step::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem;
+    color: rgba(200,16,46,0.2); line-height: 1;
+    display: block; margin-bottom: 0.5rem;
+  }
+  .step h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+  .step p { font-size: 0.82rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 1px; }
+  .faq-item { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .faq-q {
+    width: 100%; background: var(--navy-mid); color: var(--white);
+    border: none; padding: 1.25rem 1.5rem; text-align: left; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    transition: background 0.2s;
+  }
+  .faq-q:hover { background: var(--navy-light); }
+  .faq-q .arrow { color: var(--red); font-size: 1rem; transition: transform 0.2s; flex-shrink: 0; }
+  .faq-q.open .arrow { transform: rotate(180deg); }
+  .faq-a {
+    background: var(--navy); padding: 0 1.5rem;
+    font-size: 0.85rem; color: var(--muted); font-weight: 300; line-height: 1.7;
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s;
+  }
+  .faq-a.open { max-height: 300px; padding: 1.25rem 1.5rem; }
+
+  @media (max-width: 768px) {
+    .steps { grid-template-columns: 1fr; }
+    .step + .step { border-left: 1px solid var(--border); border-top: none; }
+  }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+<main>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <div class="page-hero-eyebrow">1-on-1 Training</div>
+      <h1>PRIVATE &amp;<br><em>SOLO</em><br>LESSONS</h1>
+      <p>Fully personalized sessions for competition dancers and barre clients. Tailored to your goals, your schedule, and your next big performance.</p>
+    </div>
+  </div>
+
+  <!-- LESSONS -->
+  <section id="lessons">
+    <div class="section-label">Session Types</div>
+    <h2>Choose Your Session</h2>
+    <p class="section-sub">All private and solo lessons are booked by appointment through Acuity Scheduling — confirmed instantly on Kyla's iPhone.</p>
+
+    <div class="privates-grid">
+
+      <!-- SOLO LESSON -->
+      <div class="private-card">
+        <div class="private-card-head">
+          <div class="private-num">01</div>
+          <div>
+            <h3>Competition Solo Lesson</h3>
+            <p>Ages 6–18 &nbsp;·&nbsp; 60 or 90 min</p>
+          </div>
+        </div>
+        <div class="private-card-body">
+          <ul>
+            <li>Technique corrections and artistry coaching</li>
+            <li>Full solo run-throughs with detailed feedback</li>
+            <li>Stage performance and presence development</li>
+            <li>Competition-specific musicality work</li>
+            <li>Available Mon, Wed &amp; Fri evenings + Saturdays</li>
+          </ul>
+          <a href="booking.html" class="btn-primary sm">Book Solo Lesson</a>
+        </div>
+      </div>
+
+      <!-- CHOREOGRAPHY -->
+      <div class="private-card">
+        <div class="private-card-head">
+          <div class="private-num">02</div>
+          <div>
+            <h3>Private Choreography</h3>
+            <p>Ages 6–18 &nbsp;·&nbsp; 90 min sessions</p>
+          </div>
+        </div>
+        <div class="private-card-body">
+          <ul>
+            <li>Custom solo choreography created for your dancer</li>
+            <li>Music selection and editing consultation</li>
+            <li>Concept, theme, and costume guidance</li>
+            <li>Multiple revision sessions as competition nears</li>
+            <li>Competition calendar planning support</li>
+          </ul>
+          <a href="booking.html" class="btn-primary sm">Book Choreography</a>
+        </div>
+      </div>
+
+      <!-- PRIVATE BARRE -->
+      <div class="private-card">
+        <div class="private-card-head">
+          <div class="private-num">03</div>
+          <div>
+            <h3>Private Barre Session</h3>
+            <p>All ages &amp; levels &nbsp;·&nbsp; 60 min</p>
+          </div>
+        </div>
+        <div class="private-card-body">
+          <ul>
+            <li>Fully personalized to your fitness goals</li>
+            <li>Ideal for dancers and non-dancers alike</li>
+            <li>Flexible scheduling throughout the week</li>
+            <li>Great for adults with busy or irregular schedules</li>
+            <li>Progressions tracked session to session</li>
+          </ul>
+          <a href="booking.html" class="btn-primary sm">Book Private Barre</a>
+        </div>
+      </div>
+
+      <!-- SEMI-PRIVATE -->
+      <div class="private-card">
+        <div class="private-card-head">
+          <div class="private-num">04</div>
+          <div>
+            <h3>Semi-Private (2 People)</h3>
+            <p>All ages &amp; levels &nbsp;·&nbsp; 60 min</p>
+          </div>
+        </div>
+        <div class="private-card-body">
+          <ul>
+            <li>Share a private session with a friend or sibling</li>
+            <li>More personalized than group class</li>
+            <li>Split cost between two participants</li>
+            <li>Great for dancers at similar levels training together</li>
+            <li>Available by appointment throughout the week</li>
+          </ul>
+          <a href="booking.html" class="btn-primary sm">Book Semi-Private</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKING PROCESS -->
+  <section id="process">
+    <div class="section-label">How It Works</div>
+    <h2>From Booking to Studio</h2>
+    <p class="section-sub">Booking a private lesson takes less than two minutes. Here's exactly what happens.</p>
+
+    <div class="steps">
+      <div class="step">
+        <h3>Pick Your Session</h3>
+        <p>Choose your session type — solo lesson, choreography, private barre, or semi-private — and select a time that works for you.</p>
+      </div>
+      <div class="step">
+        <h3>Confirm &amp; Pay</h3>
+        <p>Enter your details through Acuity Scheduling. You'll receive an instant confirmation email with everything you need.</p>
+      </div>
+      <div class="step">
+        <h3>Kyla Gets Notified</h3>
+        <p>Your booking syncs directly and immediately to Kyla's iPhone calendar. No manual follow-up needed on either side.</p>
+      </div>
+      <div class="step">
+        <h3>Show Up &amp; Train</h3>
+        <p>Arrive at the studio ready to work. Reminders are sent automatically before your session so nothing gets missed.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem; text-align:center;">
+      <a href="booking.html" class="btn-primary">Book a Private Lesson</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="section-label">FAQs</div>
+    <h2>Common Questions</h2>
+    <p class="section-sub">Everything you need to know about private and solo lessons.</p>
+
+    <div class="faq-list" style="max-width:780px;">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How far in advance should I book a solo lesson?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          As far in advance as possible — especially during competition season (typically October through April). Solo lesson slots fill quickly. Booking 2–4 weeks ahead is recommended to secure your preferred time.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What should my dancer bring to a solo lesson?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Appropriate dance attire and shoes for their style, a water bottle, and their competition music on a phone or device. If it's a choreography session, come with music options ready if possible.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I reschedule or cancel a private lesson?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Yes — please cancel or reschedule at least 24 hours before your session through your Acuity confirmation email. Changes sync automatically to Kyla's calendar so there's no need to call or text separately.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are private barre sessions suitable for complete beginners?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Absolutely. Private barre sessions are completely customized to your current fitness level. Many clients begin with private sessions to build confidence before joining group classes, and that's perfectly encouraged.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How many choreography sessions does a full solo take?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Most solos are set over 2–4 sessions depending on the dancer's level and the complexity of the piece. Additional revision sessions are recommended as the competition date approaches to refine performance quality.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you teach all dance styles for competition solos?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Kyla specializes in technique-driven styles including lyrical, contemporary, jazz, and barre-based movement. Contact Kyla directly through the contact page if you have questions about a specific style before booking.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+<div id="site-footer"></div>
+<script src="css/nav.js"></script>
+<script>
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  btn.classList.toggle('open');
+  answer.classList.toggle('open');
+}
+</script>
+</body>
+</html>
