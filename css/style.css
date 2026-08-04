@@ -1,20 +1,20 @@
 /* ============================================
    KYLA CHANG – BARRE & FITNESS
-   Global Stylesheet
+   Global Stylesheet new
    ============================================ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0a1628;
-  --navy-mid: #142240;
-  --navy-light: #1e3560;
-  --red: #c8102e;
-  --red-light: #e8193b;
-  --white: #ffffff;
-  --muted: #94a3b8;
-  --border: rgba(255,255,255,0.1);
-  --border-red: rgba(200,16,46,0.3);
+  --navy: #eef6f2;
+  --navy-mid: #e3f0ea;
+  --navy-light: #d7e9e1;
+  --red: #8db8a8;
+  --red-light: #a9cdc0;
+  --white: #2d3a35;
+  --muted: #6b7b74;
+  --border: rgba(45,58,53,0.10);
+  --border-red: rgba(141,184,168,0.35);
 }
 
 html { scroll-behavior: smooth; }
@@ -91,7 +91,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1rem 3rem;
-  background: rgba(10,22,40,0.96);
+  background: rgba(238,246,242,0.96);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -180,7 +180,7 @@ section { padding: 6rem 3rem; }
   display: inline-block; align-self: flex-start;
   font-size: 0.65rem; font-weight: 500;
   letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--red); background: rgba(200,16,46,0.12);
+  color: var(--red); background: rgba(141,184,168,0.18);
   padding: 0.25rem 0.6rem; border-radius: 2px; margin-bottom: 1rem;
 }
 
@@ -215,14 +215,14 @@ section { padding: 6rem 3rem; }
   display: flex; align-items: center; justify-content: flex-end; padding-right: 0.8rem;
 }
 .sched-class {
-  background: rgba(200,16,46,0.1); border: 1px solid var(--border-red);
+  background: rgba(141,184,168,0.18); border: 1px solid var(--border-red);
   border-radius: 3px; color: var(--white); font-size: 0.68rem;
   padding: 0.4rem 0.3rem; line-height: 1.3; cursor: pointer;
   transition: background 0.15s; margin: 2px; display: block; text-decoration: none;
 }
-.sched-class:hover { background: rgba(200,16,46,0.2); color: var(--white); }
-.sched-class.adult { background: rgba(30,53,96,0.6); border-color: rgba(100,140,200,0.4); }
-.sched-class.private { background: rgba(200,16,46,0.2); border-color: rgba(200,16,46,0.6); }
+.sched-class:hover { background: rgba(141,184,168,0.28); color: var(--white); }
+.sched-class.adult { background: rgba(201,220,212,0.9); border-color: rgba(141,184,168,0.45); }
+.sched-class.private { background: rgba(141,184,168,0.28); border-color: rgba(200,16,46,0.6); }
 .sched-empty { background: var(--navy-mid); }
 
 .schedule-legend { display: flex; gap: 1rem; margin-top: 1.25rem; flex-wrap: wrap; }
@@ -244,7 +244,7 @@ section { padding: 6rem 3rem; }
 
 /* ── FOOTER ── */
 footer {
-  background: #060e1a; padding: 3rem;
+  background: #d9ebe3; padding: 3rem;
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 1.5rem;
   border-top: 1px solid var(--border);
@@ -285,7 +285,7 @@ footer {
 .info-list li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 .info-icon {
   width: 28px; height: 28px;
-  background: rgba(200,16,46,0.15); border: 1px solid var(--border-red);
+  background: rgba(141,184,168,0.18); border: 1px solid var(--border-red);
   border-radius: 2px; display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 2px;
 }
